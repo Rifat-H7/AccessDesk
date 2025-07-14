@@ -1,5 +1,7 @@
 ﻿using AccessDesk_Win.Models;
 using AccessDesk_Win.Services;
+using AccessDesk_Win.Services.Interfaces;
+using AccessDesk_Win.ViewModels;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -59,6 +61,11 @@ namespace AccessDesk_Win
                     _ = services.AddSingleton<ViewModels.ChatViewModel>();
                     _ = services.AddSingleton<Views.Pages.SettingsPage>();
                     _ = services.AddSingleton<ViewModels.SettingsViewModel>();
+
+
+                    services.AddSingleton<IHubConnectionService, HubConnectionService>();
+                    services.AddSingleton<IChatService, ChatService>();
+                    services.AddSingleton<ChatViewModel>();
 
                     // Configuration
                     _ = services.Configure<AppConfig>(context.Configuration.GetSection(nameof(AppConfig)));

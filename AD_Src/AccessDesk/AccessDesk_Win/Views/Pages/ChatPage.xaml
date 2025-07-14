@@ -4,11 +4,22 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:AccessDesk_Win.Views.Pages"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ChatPage">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition  Height="*"/>
+        </Grid.RowDefinitions>
+        <ui:TextBox Grid.Row="1" Height="30" Width="300"
+                    Text="{Binding ViewModel.Message}"/>
+        <ui:Button
+            Background="Blue" Grid.Row="1" HorizontalAlignment="Right"
+            Command="{Binding ViewModel.SendMessageCommand}"/>
+        <!--<ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto"  Margin="0,0,0,10" >
+        </ScrollViewer>-->
     </Grid>
 </Page>

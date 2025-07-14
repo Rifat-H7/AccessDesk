@@ -12,16 +12,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Wpf.Ui.Abstractions.Controls;
 
 namespace AccessDesk_Win.Views.Pages
 {
     /// <summary>
     /// Interaction logic for ChatPage.xaml
     /// </summary>
-    public partial class ChatPage : Page
+    public partial class ChatPage : INavigableView<ViewModels.ChatViewModel>
     {
-        public ChatPage()
+        public ViewModels.ChatViewModel ViewModel { get; }
+        public ChatPage(ViewModels.ChatViewModel viewModel)
         {
+            ViewModel = viewModel;
+            DataContext = this;
             InitializeComponent();
         }
     }
