@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using AccessDesk_ASP_Server.Models.DTOs.Common;
+using System.Net;
 using System.Text.Json;
 
 namespace AccessDesk_ASP_Server.Middleware

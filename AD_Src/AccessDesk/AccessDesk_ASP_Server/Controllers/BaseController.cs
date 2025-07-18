@@ -5,7 +5,7 @@ namespace AccessDesk_ASP_Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BaseControllerController : ControllerBase
+    public class BaseController : ControllerBase
     {
         protected string GetUserId()
         {
