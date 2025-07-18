@@ -1,16 +1,11 @@
 using AccessDesk_ASP_Server.Data;
 using AccessDesk_ASP_Server.Extensions;
-using AccessDesk_ASP_Server.SignalrHub;
 using AccessDesk_ASP_Server.Utilities.Constants;
 using FluentValidation;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("AD_DBConnection");
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
-// Add services to the container.
 
 // Add Serilog
 Log.Logger = new LoggerConfiguration()

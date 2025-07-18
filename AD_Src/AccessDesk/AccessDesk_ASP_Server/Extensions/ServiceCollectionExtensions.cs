@@ -23,7 +23,7 @@ namespace AccessDesk_ASP_Server.Extensions
         {
             // Database
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(configuration.GetConnectionString("AD_DBConnection")));
 
             // Identity
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
