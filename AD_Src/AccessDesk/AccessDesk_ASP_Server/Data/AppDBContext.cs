@@ -1,7 +1,7 @@
 ﻿using AccessDesk_ASP_Server.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace AccessDesk_ASP_Server.Configs
+namespace AccessDesk_ASP_Server.Data
 {
     public class AppDBContext : DbContext
     {

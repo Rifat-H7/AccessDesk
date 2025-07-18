@@ -1,4 +1,4 @@
-using AccessDesk_ASP_Server.Configs;
+using AccessDesk_ASP_Server.Data;
 using AccessDesk_ASP_Server.SignalrHub;
 using Microsoft.EntityFrameworkCore;
 
