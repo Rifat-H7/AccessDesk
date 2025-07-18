@@ -81,7 +81,12 @@ namespace AccessDesk_ASP_Server.Extensions
             services.AddScoped<IValidator<LoginRequestDto>, LoginRequestValidator>();
 
             // AutoMapper
-            services.AddAutoMapper(typeof(MappingProfile));
+            // AutoMapper - configure with action
+            services.AddAutoMapper(cfg =>
+            {
+                cfg.AddProfile<MappingProfile>();
+                // Add other profiles if needed
+            });
 
             return services;
         }
