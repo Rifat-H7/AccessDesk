@@ -2,6 +2,7 @@ using AccessDesk_ASP_Server.Data;
 using AccessDesk_ASP_Server.Extensions;
 using AccessDesk_ASP_Server.SignalrHub;
 using AccessDesk_ASP_Server.Utilities.Constants;
+using FluentValidation;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
