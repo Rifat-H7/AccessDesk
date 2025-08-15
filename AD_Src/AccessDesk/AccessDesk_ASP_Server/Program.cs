@@ -53,13 +53,17 @@ builder.Services.AddApplicationServices(builder.Configuration);
 // Add CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", builder =>
+    options.AddPolicy("AllowLocalhost5173", policy =>
     {
-        builder.AllowAnyOrigin()
-               .AllowAnyMethod()
-               .AllowAnyHeader();
+        policy.WithOrigins("http://localhost:5173") // Vite dev server
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
     });
 });
+
+
+
 
 var app = builder.Build();
 
@@ -71,8 +75,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCustomExceptionMiddleware();
+app.UseCors("AllowLocalhost5173");
 app.UseHttpsRedirection();
-app.UseCors("AllowAll");
 
 app.UseAuthentication();
 app.UseAuthorization();
